@@ -96,14 +96,5 @@ allow mediaserver oemfs:file r_file_perms;
 
 allow mediaserver bootanim:binder { transfer call };
 
-use_drmservice(mediaserver)
-allow mediaserver drmserver:drmservice {
-    consumeRights
-    setPlaybackStatus
-    openDecryptSession
-    closeDecryptSession
-    initializeDecryptUnit
-    decrypt
-    finalizeDecryptUnit
-    pread
-};
+# ViPER4Android
+allow mediaserver mediaserver_tmpfs:file execute;
